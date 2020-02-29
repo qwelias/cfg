@@ -1,0 +1,2 @@
+* text eol=lf
+.config/dconf/* -text
