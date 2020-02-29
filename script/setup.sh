@@ -6,7 +6,7 @@ set -o nounset
 set -o xtrace
 
 echo 'Installing goodies'
-yay -S ttf-ubuntu-font-family xss-lock xsecurelock micro numix-square-icon-theme
+yay -S ttf-ubuntu-font-family xss-lock xsecurelock micro-bin numix-square-icon-theme google-chrome
 
 echo 'Setting GNOME Keyring unlock via PAM'
 sudo sh -c 'echo "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.d/passwd'
