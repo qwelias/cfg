@@ -13,7 +13,9 @@ yay -S \
 	numix-square-icon-theme \
 	google-chrome \
 	seahorse \
-	gnome-tweaks
+	gnome-tweaks \
+	visual-studio-code-bin \
+	tig
 
 sudo sh -c 'printf "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.d/passwd'
 sudo sh -c 'printf "\nauth       optional     pam_gnome_keyring.so\nsession    optional     pam_gnome_keyring.so auto_start" >> /etc/pam.d/login'
@@ -31,10 +33,9 @@ yay -S autoconf \
 	parallel
 	
 git clone https://github.com/qwelias/adapta-gtk-theme /tmp/adapta
-
 cd /tmp/adapta
 ./my-autogen.sh
 make
 sudo make install
 
-echo 'After logging in next time set Login keyring as default manually'
+echo '\e[35mAfter logging in next time set Login keyring as default manually using Seahorse'
