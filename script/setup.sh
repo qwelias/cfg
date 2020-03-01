@@ -15,7 +15,8 @@ yay -S \
 	seahorse \
 	gnome-tweaks \
 	visual-studio-code-bin \
-	tig
+	tig \
+	pacman-contrib
 
 sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
 
@@ -23,6 +24,8 @@ sudo sh -c 'printf "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.
 sudo sh -c 'printf "\nauth       optional     pam_gnome_keyring.so\nsession    optional     pam_gnome_keyring.so auto_start" >> /etc/pam.d/login'
 
 sudo sh -c 'curl https://gist.githubusercontent.com/qwelias/e165b3f78c5ad6d8a61b093e0ef98d6b/raw > /usr/share/oh-my-zsh/themes/qwelias.zsh-theme'
+
+sudo cp ~/.zshrc /root/.zshrc
 
 yay -S autoconf \
 	automake \
