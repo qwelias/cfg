@@ -6,15 +6,15 @@ set -o nounset
 set -o xtrace
 
 yay -S \
-	ttf-ubuntu-font-family \
 	xss-lock \
 	xsecurelock \
-	micro-bin \
+	ttf-ubuntu-font-family \
+	gnome-tweaks \
 	numix-square-icon-theme \
+	micro-bin \
+	visual-studio-code-bin \
 	google-chrome \
 	seahorse \
-	gnome-tweaks \
-	visual-studio-code-bin \
 	tig \
 	pacman-contrib
 
