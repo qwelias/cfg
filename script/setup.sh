@@ -14,6 +14,7 @@ yay -S \
 	micro-bin \
 	visual-studio-code-bin \
 	google-chrome \
+	chrome-gnome-shell \
 	seahorse \
 	tig \
 	pacman-contrib
