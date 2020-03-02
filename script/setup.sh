@@ -23,9 +23,6 @@ sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/p
 sudo sh -c 'curl https://gist.githubusercontent.com/qwelias/e165b3f78c5ad6d8a61b093e0ef98d6b/raw > /usr/share/oh-my-zsh/themes/qwelias.zsh-theme'
 sudo cp ~/.zshrc /root/.zshrc
 
-sudo sh -c 'printf "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.d/passwd'
-sudo sh -c 'printf "\nauth       optional     pam_gnome_keyring.so\nsession    optional     pam_gnome_keyring.so auto_start" >> /etc/pam.d/login'
-
 yay -S --needed autoconf \
 	automake \
 	inkscape \
@@ -42,4 +39,6 @@ cd /tmp/adapta
 make
 sudo make install
 
+sudo sh -c 'printf "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.d/passwd'
+sudo sh -c 'printf "\nauth       optional     pam_gnome_keyring.so\nsession    optional     pam_gnome_keyring.so auto_start" >> /etc/pam.d/login'
 echo '\e[35mAfter logging in next time set Login keyring as default manually using Seahorse'
