@@ -5,7 +5,7 @@ set -o pipefail
 set -o nounset
 set -o xtrace
 
-yay -S \
+yay -S --needed \
 	xss-lock \
 	xsecurelock \
 	ttf-ubuntu-font-family \
@@ -20,15 +20,13 @@ yay -S \
 	pacman-contrib
 
 sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
+sudo sh -c 'curl https://gist.githubusercontent.com/qwelias/e165b3f78c5ad6d8a61b093e0ef98d6b/raw > /usr/share/oh-my-zsh/themes/qwelias.zsh-theme'
+sudo cp ~/.zshrc /root/.zshrc
 
 sudo sh -c 'printf "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.d/passwd'
 sudo sh -c 'printf "\nauth       optional     pam_gnome_keyring.so\nsession    optional     pam_gnome_keyring.so auto_start" >> /etc/pam.d/login'
 
-sudo sh -c 'curl https://gist.githubusercontent.com/qwelias/e165b3f78c5ad6d8a61b093e0ef98d6b/raw > /usr/share/oh-my-zsh/themes/qwelias.zsh-theme'
-
-sudo cp ~/.zshrc /root/.zshrc
-
-yay -S autoconf \
+yay -S --needed autoconf \
 	automake \
 	inkscape \
 	gdk-pixbuf2 \
