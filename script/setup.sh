@@ -19,7 +19,9 @@ goodies () {
 		chrome-gnome-shell \
 		seahorse \
 		tig \
-		pacman-contrib
+		pacman-contrib \
+		openvpn \
+		networkmanager-openvpn
 }
 
 zsh () {
