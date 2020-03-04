@@ -13,6 +13,7 @@ goodies () {
 		gnome-tweaks \
 		numix-square-icon-theme \
 		micro-bin \
+		xclip \
 		visual-studio-code-bin \
 		google-chrome \
 		chrome-gnome-shell \
