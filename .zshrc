@@ -71,7 +71,8 @@ plugins=(git zsh-syntax-highlighting)
 export EDITOR='micro'
 export GIT_EDITOR='micro'
 
-alias config='/usr/bin/git --git-dir=$HOME/config/ --work-tree=$HOME'
+alias cfg='git --git-dir=$HOME/cfg/ --work-tree=$HOME'
+alias tigc='GIT_DIR=$HOME/cfg/ GIT_WORK_TREE=$HOME tig'
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
