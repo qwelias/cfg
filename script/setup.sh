@@ -24,7 +24,7 @@ goodies () {
 
 zsh () {
 	sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
-	sudo sh -c 'curl https://gist.githubusercontent.com/qwelias/e165b3f78c5ad6d8a61b093e0ef98d6b/raw > /usr/share/oh-my-zsh/themes/qwelias.zsh-theme'
+	sudo cp ~/.config/qwelias.zsh-theme /usr/share/oh-my-zsh/themes/qwelias.zsh-theme
 	sudo cp ~/.zshrc /root/.zshrc
 }
 
