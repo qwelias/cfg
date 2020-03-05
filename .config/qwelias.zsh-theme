@@ -25,8 +25,8 @@ get_git () {
 
 bureau_git_branch () {
   git=$(get_git)
-  ref=$(`echo command $git symbolic-ref HEAD 2> /dev/null`) || \
-  ref=$(`echo command $git rev-parse --short HEAD 2> /dev/null`) || return
+  ref=$(`echo command $git symbolic-ref HEAD` 2> /dev/null) || \
+  ref=$(`echo command $git rev-parse --short HEAD` 2> /dev/null) || return
   echo "${ref#refs/heads/}"
 }
 
@@ -35,7 +35,7 @@ bureau_git_status() {
   _STATUS=""
 
   # check status of files
-  _INDEX=$(`echo command $git status --porcelain 2> /dev/null`)
+  _INDEX=$(`echo command $git status --porcelain` 2> /dev/null)
   if [[ -n "$_INDEX" ]]; then
     if $(echo "$_INDEX" | command grep -q '^[AMRD]. '); then
       _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
@@ -54,7 +54,7 @@ bureau_git_status() {
   fi
 
   # check status of local repository
-  _INDEX=$(`echo command $git status --porcelain -b 2> /dev/null`)
+  _INDEX=$(`echo command $git status --porcelain -b` 2> /dev/null)
   if $(echo "$_INDEX" | command grep -q '^## .*ahead'); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
   fi
@@ -65,7 +65,7 @@ bureau_git_status() {
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_DIVERGED"
   fi
 
-  if $(`echo command $git rev-parse --verify refs/stash &> /dev/null`); then
+  if $(`echo command $git rev-parse --verify refs/stash` &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STASHED"
   fi
 
