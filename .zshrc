@@ -74,6 +74,10 @@ export GIT_EDITOR='micro'
 alias cfg='git --git-dir=$HOME/cfg/ --work-tree=$HOME'
 alias tigc='GIT_DIR=$HOME/cfg/ GIT_WORK_TREE=$HOME tig'
 
+if [ -e /etc/profile.d/vte.sh ]; then
+    . /etc/profile.d/vte.sh
+fi
+
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
