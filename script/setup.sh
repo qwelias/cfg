@@ -21,6 +21,7 @@ goodies () {
 		tig \
 		pacman-contrib \
 		openvpn \
+		nvm \
 		networkmanager-openvpn
 }
 
