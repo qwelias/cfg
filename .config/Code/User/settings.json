@@ -23,5 +23,6 @@
         "**/.hg": false,
         "**/CVS": false,
         "**/.DS_Store": false
-    }
+    },
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}"
 }
