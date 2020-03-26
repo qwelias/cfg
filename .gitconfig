@@ -3,7 +3,7 @@
 	name = Ilia Baryshnikov
 [push]
 	default = current
-	followTags = true
+	followTags = false
 [alias]
 	diff-clean = diff --ignore-all-space
 	show-clean = show --ignore-all-space
