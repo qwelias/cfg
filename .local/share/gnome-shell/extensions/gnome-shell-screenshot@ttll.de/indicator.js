@@ -58,7 +58,7 @@ class CaptureDelayMenu extends PopupMenu.PopupMenuSection {
     this.slider = new Slider.Slider(this.scaleToSlider(this.delayValueMS));
     this.slider.connect(getSliderSignalCompat(), this.onDragEnd.bind(this));
     this.sliderItem = new PopupMenu.PopupBaseMenuItem({ activate: false });
-    getActorCompat(this.sliderItem).add(
+    getActorCompat(this.sliderItem).add_actor(
       getActorCompat(this.slider), { expand: true }
     );
     this.addMenuItem(this.sliderItem);
@@ -320,7 +320,16 @@ class Indicator {
     const settingsItem = new PopupMenu.PopupMenuItem(_("Settings"));
     settingsItem.connect("activate", () => {
       const appSys = Shell.AppSystem.get_default();
-      const prefs = appSys.lookup_app("gnome-shell-extension-prefs.desktop");
+      const appId = Convenience.currentVersionGreaterEqual("3.36")
+        ? "org.gnome.Extensions.desktop"
+        : "gnome-shell-extension-prefs.desktop";
+      const prefs = appSys.lookup_app(appId);
+
+      if (!prefs) {
+        logError(new Error("could not find prefs app"));
+        return;
+      }
+
       if (prefs.get_state() == prefs.SHELL_APP_STATE_RUNNING) {
         prefs.activate();
       } else {
