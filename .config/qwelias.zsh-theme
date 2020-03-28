@@ -99,7 +99,7 @@ qwe_prompt () {
         fi
     fi
 
-    if [[ "${result}x" != "x" ]]; then echo "($result)"; fi
+    [[ "${result}x" != "x" ]] && "($result)"
 }
 
 _PATH="%{$fg_bold[blue]%}%~%{$reset_color%}"
@@ -130,9 +130,17 @@ get_space () {
   echo $SPACES
 }
 
+exit_info () {
+	local code="$?"
+	[ $code -eq 0 ] && return
+
+	echo " %{$fg_bold[red]%}$code"
+}
+
 bureau_prompt_header () {
+	local code_info="$(exit_info)"
     local left="$_USERNAME $_PATH $(bureau_git_prompt) $(qwe_prompt)"
-    local right="$(nvm_prompt_info) [%*]"
+    local right="$(nvm_prompt_info) [%*]$code_info"
 
     local spaces=$(get_space $left $right)
 
