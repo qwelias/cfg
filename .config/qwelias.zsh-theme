@@ -99,7 +99,7 @@ qwe_prompt () {
         fi
     fi
 
-    [[ "${result}x" != "x" ]] && "($result)"
+    [[ "${result}x" != "x" ]] && echo "($result)"
 }
 
 _PATH="%{$fg_bold[blue]%}%~%{$reset_color%}"
