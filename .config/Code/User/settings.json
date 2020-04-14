@@ -37,5 +37,8 @@
         "**/bower_components": true,
         "**/*.code-search": true
     },
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "timeline.excludeSources": [
+        "git-history"
+    ]
 }
