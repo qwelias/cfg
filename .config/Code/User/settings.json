@@ -33,7 +33,7 @@
     "gitlens.keymap": "none",
     "search.useIgnoreFiles": false,
     "search.exclude": {
-        "**/node_modules": false,
+        "**/node_modules": true,
         "**/bower_components": true,
         "**/*.code-search": true
     },
