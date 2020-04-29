@@ -40,7 +40,27 @@ const getSource = () => {
   return source;
 }
 
-const Notification = GObject.registerClass(class Notification extends MessageTray.Notification {
+
+const registerClassCompat = (cls) => {
+  if (Convenience.currentVersionGreaterEqual("3.36")) {
+    return GObject.registerClass(cls);
+  } else {
+    Signals.addSignalMethods(cls.prototype);
+    return cls;
+  }
+}
+
+
+const showNotificationCompat = (source, notification) => {
+  if (Convenience.currentVersionGreaterEqual("3.36")) {
+    return source.showNotification(notification);
+  } else {
+    return source.notify(notification);
+  }
+}
+
+
+const Notification = registerClassCompat(class Notification extends MessageTray.Notification {
   static _title() {
     return _("New Screenshot");
   }
@@ -51,14 +71,26 @@ const Notification = GObject.registerClass(class Notification extends MessageTra
     return banner;
   }
 
-  _init(source, screenshot) {
-    super._init(
+  static ctrArgs(source, screenshot) {
+    return [
       source,
       Notification._title(),
       Notification._banner(screenshot),
       { gicon: Thumbnail.getIcon(screenshot.srcFile.get_path()) }
-    );
+    ];
+  }
 
+  constructor(source, screenshot) {
+    super(...Notification.ctrArgs(...arguments));
+    this.initCompat(...arguments);
+  }
+
+  _init(source, screenshot) {
+    super._init(...Notification.ctrArgs(...arguments));
+    this.initCompat(...arguments);
+  }
+
+  initCompat(source, screenshot) {
     this.connect("activated", this._onActivated.bind(this));
 
     // makes banner expand on hover
@@ -103,25 +135,42 @@ const Notification = GObject.registerClass(class Notification extends MessageTra
 });
 
 
-var ErrorNotification = GObject.registerClass(
+var ErrorNotification = registerClassCompat(
   class ErrorNotification extends MessageTray.Notification {
 
-  _init(source, message) {
-    super._init(
+  static ctrArgs(source, message) {
+    return [
       source,
       _("Error"),
       String(message),
       { secondaryGIcon: new Gio.ThemedIcon({name: "dialog-error"}) }
-    );
+    ]
+  }
+
+  constructor(source, message) {
+    super(...ErrorNotification.ctrArgs(...arguments));
+  }
+
+  _init(source, message) {
+    super._init(...ErrorNotification.ctrArgs(...arguments));
   }
 });
 
 
-var ImgurNotification = GObject.registerClass(
+var ImgurNotification = registerClassCompat(
   class ImgurNotification extends MessageTray.Notification {
+
+  constructor(source, screenshot) {
+    super(source, _("Imgur Upload"));
+    this.initCompat(...arguments);
+  }
 
   _init(source, screenshot) {
     super._init(source, _("Imgur Upload"));
+    this.initCompat(...arguments);
+  }
+
+  initCompat(source, screenshot) {
     this.setForFeedback(true);
     this.setResident(true);
 
@@ -183,19 +232,19 @@ var ImgurNotification = GObject.registerClass(
 const notifyScreenshot = (screenshot) => {
   const source = getSource();
   const notification = new Notification(source, screenshot);
-  source.showNotification(notification);
+  showNotificationCompat(source, notification);
 }
 
 const notifyError = (message) => {
   const source = getSource();
   const notification = new ErrorNotification(source, message);
-  source.showNotification(notification);
+  showNotificationCompat(source, notification);
 }
 
 const notifyImgurUpload = (screenshot) => {
   const source = getSource();
   const notification = new ImgurNotification(source, screenshot);
-  source.showNotification(notification);
+  showNotificationCompat(source, notification);
 }
 
 var exports = {
