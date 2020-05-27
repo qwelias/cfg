@@ -40,5 +40,7 @@
     "explorer.confirmDragAndDrop": false,
     "timeline.excludeSources": [
         "git-history"
-    ]
+    ],
+    "gitlens.currentLine.enabled": false,
+    "javascript.updateImportsOnFileMove.enabled": "never"
 }
