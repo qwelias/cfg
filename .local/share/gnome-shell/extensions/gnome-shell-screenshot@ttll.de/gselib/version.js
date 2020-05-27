@@ -28,6 +28,46 @@ function versionSmaller(a, b) {
     return (!versionEqual(a, b)) && (!versionGreater(a, b));
 }
 
+function currentVersion() {
+  return new Version(imports.misc.config.PACKAGE_VERSION);
+}
+
+class Version {
+  constructor(packageVersion) {
+    this.packageVersion = packageVersion;
+  }
+
+  equal(v) {
+    return versionEqual(this.packageVersion, v);
+  }
+
+  greater(v) {
+    return versionGreater(this.packageVersion, v);
+  }
+
+  smaller(v) {
+    return versionSmaller(this.packageVersion, v);
+  }
+
+  greaterEqual(v) {
+    return this.equal(v) || this.greater(v);
+  }
+
+  smallerEqual(v) {
+    return this.equal(v) || this.smaller(v);
+  }
+}
+
+var exports = {
+  versionEqual,
+  versionGreater,
+  versionSmaller,
+  currentVersion,
+  Version,
+}
+
+
+
 if (window["ARGV"] && ARGV[0] == "test") {
     log("zip(\"1.2.3\", \"1.2\")=" + JSON.stringify(zip(
         versionArray("1.2.3"),
@@ -59,8 +99,3 @@ if (window["ARGV"] && ARGV[0] == "test") {
     });
 }
 
-var exports = {
-  versionEqual,
-  versionGreater,
-  versionSmaller
-}
