@@ -19,3 +19,5 @@
 	conflictStyle = diff3
 [core]
 	editor = micro
+[pull]
+	ff = only
