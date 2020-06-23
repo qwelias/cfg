@@ -7,5 +7,9 @@
     {
         "key": "ctrl+shift+d",
         "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "ctrl+t ctrl+c",
+        "command": "workbench.files.action.collapseExplorerFolders"
     }
 ]

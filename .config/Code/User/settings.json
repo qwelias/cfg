@@ -42,5 +42,7 @@
         "git-history"
     ],
     "gitlens.currentLine.enabled": false,
-    "javascript.updateImportsOnFileMove.enabled": "never"
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "rust.build_on_save": true,
+    "eslint.run": "onSave"
 }
