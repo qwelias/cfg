@@ -1,2 +1,5 @@
 * text eol=lf
 .config/dconf/* -text
+*.png -text
+*.svg -text
+*.gresource -text
