@@ -73,6 +73,8 @@ export GIT_EDITOR='micro'
 
 alias cfg='git --git-dir=$HOME/cfg/ --work-tree=$HOME'
 alias tigc='GIT_DIR=$HOME/cfg/ GIT_WORK_TREE=$HOME tig'
+alias ctrlc='xclip -selection clipboard -i'
+alias ctrlv='xclip -selection clipboard -o'
 
 if [ -e /etc/profile.d/vte.sh ]; then
     . /etc/profile.d/vte.sh
