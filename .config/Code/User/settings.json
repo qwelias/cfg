@@ -44,5 +44,6 @@
     "gitlens.currentLine.enabled": false,
     "javascript.updateImportsOnFileMove.enabled": "never",
     "rust.build_on_save": true,
-    "eslint.run": "onSave"
+    "eslint.run": "onSave",
+    "debug.allowBreakpointsEverywhere": true
 }

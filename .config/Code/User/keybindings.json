@@ -5,6 +5,10 @@
         "command": "-workbench.view.debug"
     },
     {
+        "key": "ctrl+shift+\\",
+        "command": "workbench.view.debug"
+    },
+    {
         "key": "ctrl+shift+d",
         "command": "editor.action.duplicateSelection"
     },
