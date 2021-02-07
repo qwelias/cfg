@@ -114,5 +114,8 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
 # added by travis gem
 [ -f /home/qwelias/.travis/travis.sh ] && source /home/qwelias/.travis/travis.sh
+
+source <(kubectl completion zsh)
