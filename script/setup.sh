@@ -7,22 +7,17 @@ set -o xtrace
 
 goodies () {
 	yay -S --needed \
-		xss-lock \
-		xsecurelock \
-		ttf-ubuntu-font-family \
-		gnome-tweaks \
-		numix-square-icon-theme \
-		micro-bin \
-		xclip \
-		visual-studio-code-bin \
-		google-chrome \
-		chrome-gnome-shell \
-		seahorse \
-		tig \
 		pacman-contrib \
-		openvpn \
-		nvm \
-		networkmanager-openvpn
+		intel-media-driver \
+		parallel neofetch bind tig nvm jq acpi batsignal htop \
+		rustup lldb \
+		xss-lock xsecurelock \
+		xclip micro-bin visual-studio-code-bin \
+		ttf-ubuntu-font-family gnome-tweaks numix-square-icon-theme dconf-editor \
+		seahorse \
+		google-chrome chrome-gnome-shell \
+		openvpn networkmanager-openvpn \
+		mpc-qt qbittorrent subtitleeditor \
 }
 
 zsh () {
