@@ -9,7 +9,7 @@ goodies () {
 	yay -S --needed \
 		pacman-contrib \
 		intel-media-driver \
-		parallel neofetch bind tig nvm jq acpi htop \
+		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
 		rustup lldb \
 		xss-lock xsecurelock \
 		xclip micro-bin visual-studio-code-bin \
