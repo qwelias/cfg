@@ -13,6 +13,8 @@ install_yay () {
 	git clone https://aur.archlinux.org/yay.git
 	cd yay
 	makepkg -si
+	cd ..
+	rm -rf yay
 	yay -Y --gendb
 	yay -Syu --devel
 	yay -Y --devel --save
