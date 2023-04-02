@@ -45,7 +45,7 @@ setup_zsh () {
 }
 
 install_gnome () {
-	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) gnome-terminal gnome-tweaks dconf-editor 
+	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) gnome-terminal gnome-tweaks dconf-editor gnome-browser-connector
 }
 
 setup_gnome () {
