@@ -26,7 +26,7 @@ install_goodies () {
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
 		rustup lldb tfenv \
 		xss-lock xsecurelock \
-		xclip micro-bin visual-studio-code-bin \
+		xclip micro visual-studio-code-bin \
 		ttf-ubuntu-font-family numix-square-icon-theme \
 		seahorse \
 		brave-bin \
