@@ -22,7 +22,7 @@ install_yay () {
 
 install_goodies () {
 	yay -S --needed \
-		zsh oh-my-zsh-git \
+		zsh \
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
 		rustup lldb tfenv \
 		xss-lock xsecurelock \
@@ -36,6 +36,7 @@ install_goodies () {
 }
 
 setup_zsh () {
+	yay -S --needed oh-my-zsh-git zsh-syntax-highlighting
 	chsh -s $(which zsh)
 	sudo chsh -s $(which zsh)
 	sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
@@ -44,7 +45,7 @@ setup_zsh () {
 }
 
 install_gnome () {
-	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) gnome-tweaks dconf-editor 
+	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) gnome-terminal gnome-tweaks dconf-editor 
 }
 
 setup_gnome () {
