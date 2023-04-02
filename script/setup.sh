@@ -6,7 +6,7 @@ set -o nounset
 set -o xtrace
 
 install_base () {
-	sudo pacman -S git base-devel pacman-contrib
+	sudo pacman -S git base-devel pacman-contrib man
 }
 	
 install_yay () {
