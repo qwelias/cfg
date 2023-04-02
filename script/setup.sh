@@ -22,7 +22,7 @@ install_yay () {
 
 install_goodies () {
 	yay -S --needed \
-		zsh \
+		zsh oh-my-zsh-git \
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
 		rustup lldb tfenv \
 		xss-lock xsecurelock \
