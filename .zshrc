@@ -108,14 +108,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-source <(gh completion -s zsh)
-
 # disable /ets/hosts lookup
 zstyle ':completion:*:ssh:*' hosts off
-
-# bun completions
-[ -s "/home/qwelias/.bun/_bun" ] && source "/home/qwelias/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
