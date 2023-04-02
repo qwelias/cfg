@@ -27,7 +27,7 @@ install_goodies () {
 		rustup lldb tfenv \
 		xss-lock xsecurelock \
 		xclip micro-bin visual-studio-code-bin \
-		ttf-ubuntu-font-family gnome-tweaks numix-square-icon-theme dconf-editor \
+		ttf-ubuntu-font-family numix-square-icon-theme \
 		seahorse \
 		brave-bin \
 		openvpn networkmanager-openvpn \
@@ -44,7 +44,7 @@ setup_zsh () {
 }
 
 install_gnome () {
-	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude)
+	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) gnome-tweaks dconf-editor 
 }
 
 setup_gnome () {
