@@ -5,11 +5,11 @@ set -o pipefail
 set -o nounset
 set -o xtrace
 
-base () {
+install_base () {
 	sudo pacman -S git base-devel pacman-contrib
 }
 	
-yay () {
+install_yay () {
 	git clone https://aur.archlinux.org/yay.git
 	cd yay
 	makepkg -si
@@ -18,7 +18,7 @@ yay () {
 	yay -Y --devel --save
 }
 
-goodies () {
+install_goodies () {
 	yay -S --needed \
 		zsh \
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
@@ -33,7 +33,7 @@ goodies () {
 		caddy kooha nnn nmap 
 }
 
-zsh () {
+setup_zsh () {
 	chsh -s $(which zsh)
 	sudo chsh -s $(which zsh)
 	sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
@@ -41,7 +41,7 @@ zsh () {
 	sudo cp ~/.zshrc /root/.zshrc
 }
 
-gnome () {
+setup_gnome () {
 	yay -S --needed \
 		gnome \
 		autoconf \
@@ -66,13 +66,13 @@ gnome () {
 	sudo make install
 }
 
-keyring () {
+setup_keyring () {
 	sudo sh -c 'printf "\npassword    optional    pam_gnome_keyring.so" >> /etc/pam.d/passwd'
 	sudo sh -c 'printf "\nauth       optional     pam_gnome_keyring.so\nsession    optional     pam_gnome_keyring.so auto_start" >> /etc/pam.d/login'
 	echo '\e[35mAfter logging in next time set Login keyring as default manually using Seahorse'	
 }
 
-fns=('base' 'yay' 'goodies' 'zsh' 'keyring')
+fns=('install_base' 'install_yay' 'install_goodies' 'setup_zsh' 'setup_gnome' 'setup_keyring')
 
 if [ $# -eq 0 ]
 then args=("${fns[@]}")
