@@ -71,7 +71,7 @@ setup_keyring () {
 	echo '\e[35mAfter logging in next time set Login keyring as default manually using Seahorse'	
 }
 
-fns=('install_base' 'install_yay' 'install_goodies' 'setup_zsh' 'setup_gnome' 'setup_keyring')
+fns=('install_base' 'install_yay' 'install_goodies' 'setup_zsh' 'install_gnome' 'setup_gnome' 'setup_keyring')
 
 if [ $# -eq 0 ]
 then args=("${fns[@]}")
