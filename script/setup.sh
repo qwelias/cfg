@@ -8,16 +8,16 @@ set -o xtrace
 goodies () {
 	yay -S --needed \
 		pacman-contrib \
-		intel-media-driver \
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
-		rustup lldb \
+		rustup lldb tfenv \
 		xss-lock xsecurelock \
 		xclip micro-bin visual-studio-code-bin \
 		ttf-ubuntu-font-family gnome-tweaks numix-square-icon-theme dconf-editor \
 		seahorse \
-		google-chrome chrome-gnome-shell \
+		brave-bin \
 		openvpn networkmanager-openvpn \
-		mpc-qt qbittorrent subtitleeditor \
+		mpc-qt vlc qbittorrent subtitleeditor \
+		caddy kooha nnn nmap 
 }
 
 zsh () {
