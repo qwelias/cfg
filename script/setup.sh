@@ -43,9 +43,12 @@ setup_zsh () {
 	sudo cp ~/.zshrc /root/.zshrc
 }
 
+install_gnome () {
+	yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude)
+}
+
 setup_gnome () {
 	yay -S --needed \
-		gnome \
 		autoconf \
 		automake \
 		inkscape \
@@ -55,12 +58,6 @@ setup_gnome () {
 		pkgconf \
 		sassc \
 		parallel
-	yay -Rnscu gnome-calendar gnome-contacts \
-		eog epiphany gdm gnome-music gnome-software \
-		gnome-text-editor gnome-user-docs \
-		gnome-video-effects grilo-plugins \
-		malcontent orca totem tracker3-miners yelp 
-		
 	git clone https://github.com/qwelias/adapta-gtk-theme /tmp/adapta
 	cd /tmp/adapta
 	./my-autogen.sh
