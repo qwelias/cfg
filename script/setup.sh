@@ -1,13 +1,26 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -o errexit
 set -o pipefail
 set -o nounset
 set -o xtrace
 
+base () {
+	sudo pacman -S git base-devel pacman-contrib
+}
+	
+yay () {
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	yay -Y --gendb
+	yay -Syu --devel
+	yay -Y --devel --save
+}
+
 goodies () {
 	yay -S --needed \
-		pacman-contrib \
+		zsh \
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
 		rustup lldb tfenv \
 		xss-lock xsecurelock \
@@ -21,6 +34,8 @@ goodies () {
 }
 
 zsh () {
+	chsh -s $(which zsh)
+	sudo chsh -s $(which zsh)
 	sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
 	sudo cp ~/.config/qwelias.zsh-theme /usr/share/oh-my-zsh/themes/qwelias.zsh-theme
 	sudo cp ~/.zshrc /root/.zshrc
@@ -28,6 +43,7 @@ zsh () {
 
 gnome () {
 	yay -S --needed \
+		gnome \
 		autoconf \
 		automake \
 		inkscape \
@@ -37,6 +53,11 @@ gnome () {
 		pkgconf \
 		sassc \
 		parallel
+	yay -Rnscu gnome-calendar gnome-contacts \
+		eog epiphany gdm gnome-music gnome-software \
+		gnome-text-editor gnome-user-docs \
+		gnome-video-effects grilo-plugins \
+		malcontent orca totem tracker3-miners yelp 
 		
 	git clone https://github.com/qwelias/adapta-gtk-theme /tmp/adapta
 	cd /tmp/adapta
@@ -51,7 +72,7 @@ keyring () {
 	echo '\e[35mAfter logging in next time set Login keyring as default manually using Seahorse'	
 }
 
-fns=('goodies' 'zsh' 'keyring')
+fns=('base' 'yay' 'goodies' 'zsh' 'keyring')
 
 if [ $# -eq 0 ]
 then args=("${fns[@]}")
