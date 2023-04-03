@@ -27,7 +27,7 @@ install_goodies () {
 		rustup lldb tfenv \
 		xss-lock xsecurelock \
 		xclip micro visual-studio-code-bin \
-		ttf-ubuntu-font-family numix-square-icon-theme \
+		ttf-ubuntu-font-family ttf-dejavu numix-square-icon-theme \
 		seahorse \
 		brave-bin \
 		openvpn networkmanager-openvpn \
