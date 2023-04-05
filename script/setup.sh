@@ -59,11 +59,9 @@ setup_gnome () {
 		pkgconf \
 		sassc \
 		parallel
-	git clone https://github.com/qwelias/adapta-gtk-theme /tmp/adapta
-	cd /tmp/adapta
-	./my-autogen.sh
-	make
-	sudo make install
+	git clone https://github.com/qwelias/gnome-patch /tmp/gnome-patch
+	cd /tmp/gnome-patch
+	./patch.sh
 }
 
 setup_keyring () {
