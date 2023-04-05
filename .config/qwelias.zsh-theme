@@ -139,7 +139,7 @@ exit_info () {
 
 bureau_prompt_header () {
 	local code_info="$(exit_info)"
-    local left="$_USERNAME $_PATH $(bureau_git_prompt) $(qwe_prompt)"
+    local left="$_USERNAME $_PATH $(bureau_git_prompt)"
     local right="$(nvm_prompt_info) [%*]$code_info"
 
     local spaces=$(get_space $left $right)

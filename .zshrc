@@ -51,7 +51,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting docker docker-compose)
 
 
 # User configuration
@@ -70,6 +70,7 @@ plugins=(zsh-syntax-highlighting)
 
 export EDITOR='micro'
 export GIT_EDITOR='micro'
+export SYSTEMD_EDITOR='micro'
 
 alias cfg='git --git-dir=$HOME/cfg/ --work-tree=$HOME'
 alias tigc='GIT_DIR=$HOME/cfg/ GIT_WORK_TREE=$HOME tig'
@@ -103,14 +104,10 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 source /usr/share/nvm/init-nvm.sh
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# disable /ets/hosts lookup
+zstyle ':completion:*:ssh:*' hosts off
