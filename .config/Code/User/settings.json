@@ -6,7 +6,7 @@
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
     "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 18,
+    "editor.fontSize": 20,
     "editor.minimap.renderCharacters": false,
     "workbench.activityBar.visible": false,
     "workbench.tree.indent": 20,

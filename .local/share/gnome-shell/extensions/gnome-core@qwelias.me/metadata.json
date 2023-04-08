@@ -1,0 +1,10 @@
+{
+    "description": "gnome-core@qwelias.me",
+    "name": "gnome-core@qwelias.me",
+    "shell-version": [
+      "44"
+    ],
+    "url": "",
+    "uuid": "gnome-core@qwelias.me",
+    "version": 1
+  }

@@ -13,27 +13,30 @@
  * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
+ * Modified by qwelias@gmail.com
  **/
 
-const Main = imports.ui.main;
-let monitorsChangedEvent = null;
+const Main = imports.ui.main
+let monitorsChangedEvent = null
 
-function hideIndicator() {
-    let indicator = Main.panel.statusArea['activities'];
-    if(indicator != null) {
-        indicator.hide();
+const hideIndicator = () => {
+    let indicator = Main.panel.statusArea['activities']
+    if (indicator != null) {
+        indicator.hide()
     }
 }
 
 function enable() {
-    monitorsChangedEvent = Main.layoutManager.connect('monitors-changed', hideIndicator);
-    hideIndicator();
+    monitorsChangedEvent = Main.layoutManager.connect('monitors-changed', hideIndicator)
+    hideIndicator()
 }
 
 function disable() {
-    Main.layoutManager.disconnect(monitorsChangedEvent);
-    let indicator = Main.panel.statusArea['activities'];
-    if(indicator != null) {
-        indicator.show();
+    Main.layoutManager.disconnect(monitorsChangedEvent)
+    let indicator = Main.panel.statusArea['activities']
+    if (indicator != null) {
+        indicator.show()
     }
 }
+
+function init () {}

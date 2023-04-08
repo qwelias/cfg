@@ -62,6 +62,9 @@ setup_gnome () {
 	git clone https://github.com/qwelias/gnome-patch /tmp/gnome-patch
 	cd /tmp/gnome-patch
 	./patch.sh
+
+	curl -L https://github.com/MartinPL/Tray-Icons-Reloaded/releases/download/24/trayIconsReloaded@selfmade.pl.zip > tray.zip
+	gnome-extensions install tray.zip
 }
 
 setup_keyring () {
