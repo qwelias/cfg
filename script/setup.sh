@@ -22,12 +22,13 @@ install_yay () {
 
 install_goodies () {
 	yay -S --needed \
+		mimi \
 		podman docker docker-compose podman-compose \
 		zsh rate-mirrors \
 		parallel neofetch bind tig nvm jq acpi htop inotify-tools \
 		rustup lldb tfenv \
 		xss-lock xsecurelock devilspie2 \
-		xclip micro visual-studio-code-bin \
+		xclip micro vscodium-bin \
 		ttf-ubuntu-font-family ttf-dejavu numix-square-icon-theme \
 		seahorse \
 		brave-bin \

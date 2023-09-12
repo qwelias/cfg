@@ -29,10 +29,10 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -67,13 +67,20 @@ plugins=(zsh-syntax-highlighting docker docker-compose)
 # else
 #   export EDITOR='mvim'
 # fi
+autoload -Uz compinit
+compinit
 
 export EDITOR='micro'
 export GIT_EDITOR='micro'
 export SYSTEMD_EDITOR='micro'
 
+setopt complete_aliases
 alias cfg='git --git-dir=$HOME/cfg/ --work-tree=$HOME'
+compdef cfg='git'
+
 alias tigc='GIT_DIR=$HOME/cfg/ GIT_WORK_TREE=$HOME tig'
+compdef tigc='tig'
+
 alias ctrlc='xclip -selection clipboard -i'
 alias ctrlv='xclip -selection clipboard -o'
 
