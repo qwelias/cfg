@@ -1,3 +1,5 @@
+'use strict'
+
 //    Window Title In Topbar
 //    Puts the title of the focused window in the GNOME Shell top panel
 //    Forked from https://extensions.gnome.org/extension/1496/focused-window-indicator/

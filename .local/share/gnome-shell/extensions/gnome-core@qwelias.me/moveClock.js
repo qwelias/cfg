@@ -1,3 +1,5 @@
+'use strict'
+
 // Copyright (C) 2011-2017 R M Yorston
 // Licence: GPLv2+
 

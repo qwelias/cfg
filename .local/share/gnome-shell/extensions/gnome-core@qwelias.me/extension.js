@@ -10,6 +10,7 @@ const subs = [
     'hideAccessibility',
     'theme',
     'title',
+    'decorator',
 ]
 
 /**
