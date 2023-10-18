@@ -1,19 +1,16 @@
-'use strict'
+import Gio from 'gi://Gio'
 
-const Gio = imports.gi.Gio
-
-let window = null
 let listener = null
 
-function init() {}
+export const name = 'decorator'
 
-function enable() {
+export const enable = () => {
     listener = global.display.connect('window-created', (display, window) => {
         remove_decorator(window)
     })
 }
 
-function disable() {
+export const disable = () => {
     global.display.disconnect(listener)
 }
 
@@ -24,7 +21,7 @@ const remove_decorator = (window) => {
             Gio.SubprocessFlags.NONE,
         );
     } catch (e) {
-        logError(e)
+        console.error(e)
     }
 }
 

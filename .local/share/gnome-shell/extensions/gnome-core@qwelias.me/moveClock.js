@@ -1,15 +1,8 @@
-'use strict'
+import * as Main from 'resource:///org/gnome/shell/ui/main.js'
 
-// Copyright (C) 2011-2017 R M Yorston
-// Licence: GPLv2+
+export const name = 'moveClock'
 
-const Main = imports.ui.main
-const SessionMode = imports.ui.sessionMode
-
-function init() {
-}
-
-function enable() {
+export const enable = () => {
     // do nothing if the clock isn't centred in this mode
     if (Main.sessionMode.panel.center.indexOf('dateMenu') == -1) {
         return
@@ -29,7 +22,7 @@ function enable() {
     }
 }
 
-function disable() {
+export const disable = () => {
     // do nothing if the clock isn't centred in this mode
     if (Main.sessionMode.panel.center.indexOf('dateMenu') == -1) {
         return

@@ -2,9 +2,7 @@
     "description": "gnome-core@qwelias.me",
     "name": "gnome-core@qwelias.me",
     "shell-version": [
-      "44",
-      "44.1",
-      "44.5"
+      "45.0"
     ],
     "url": "",
     "uuid": "gnome-core@qwelias.me",

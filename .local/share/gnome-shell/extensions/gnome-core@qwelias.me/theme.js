@@ -1,15 +1,13 @@
-'use strict'
+import * as Main from 'resource:///org/gnome/shell/ui/main.js'
 
-const Main = imports.ui.main;
+export const name = 'theme'
 
-function init() {}
-
-function enable () {
+export const enable = () => {
     Main.setThemeStylesheet('/usr/share/themes/qwelias/gnome-shell/gnome-shell.css')
     Main.loadTheme()
 }
 
-function disable () {
+export const disable = () => {
     Main.setThemeStylesheet('/usr/share/gnome-shell/theme/default.css') // can be whatever
     Main.loadTheme()
 }

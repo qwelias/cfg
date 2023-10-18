@@ -1,22 +1,21 @@
-'use strict'
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-const Main = imports.ui.main
 let monitorsChangedEvent = null
 
-const hideIndicator = () => {
-    const indicator = Main.panel.statusArea['a11y']
-    indicator && indicator.hide()
-}
+export const name = 'hideAccessibility'
 
-function enable() {
+export const enable = () => {
     monitorsChangedEvent = Main.layoutManager.connect('monitors-changed', hideIndicator)
     hideIndicator()
 }
 
-function disable() {
+export const disable = () => {
     Main.layoutManager.disconnect(monitorsChangedEvent)
     const indicator = Main.panel.statusArea['a11y']
     indicator && indicator.show()
 }
 
-function init () {}
+const hideIndicator = () => {
+    const indicator = Main.panel.statusArea['a11y']
+    indicator && indicator.hide()
+}

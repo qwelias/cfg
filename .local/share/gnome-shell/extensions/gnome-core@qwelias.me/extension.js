@@ -1,42 +1,45 @@
-'use strict'
-
 // https://gjs.guide/extensions/overview/imports-and-modules.html
-const ExtensionUtils = imports.misc.extensionUtils
-const Me = ExtensionUtils.getCurrentExtension()
+import * as hideActivities from './hideActivities.js'
+import * as moveClock from './moveClock.js'
+import * as hideAccessibility from './hideAccessibility.js'
+import * as theme from './theme.js'
+import * as title from './title.js'
+import * as decorator from './decorator.js'
 
-const subs = [
-    'hideActivities',
-    'moveClock',
-    'hideAccessibility',
-    'theme',
-    'title',
-    'decorator',
-]
+const uuid = 'gnome-core@qwelias.me'
 
-/**
- * @param {string} name 
- * @param {'enable' | 'disable' | 'init'} action 
- */
-const doSub = (name, action) => {
-    log(`${Me.metadata.uuid}:doSub:${name}:${action}`)
-    try {
-        Me.imports[name][action]()
-    } catch (e) {
-        log(`${Me.metadata.uuid}:doSub:${name}:${action}:error ${e}`)
+export default class GnomeCodeQwelias {
+    enable() {
+        console.log(`${uuid}:enable`)
+        for (const sub of subs) doSub(sub, 'enable')
+    }
+
+    disable() {
+        console.log(`${uuid}:disable`)
+        for (const sub of subs) doSub(sub, 'disable')
     }
 }
 
-function init() {
-    log(`${Me.metadata.uuid}:init`)
-    for (const name of subs) doSub(name, 'init')
-}
+const subs = [
+    // hideActivities,
+    moveClock,
+    hideAccessibility,
+    theme,
+    title,
+    decorator,
+]
 
-function enable() {
-    log(`${Me.metadata.uuid}:enable`)
-    for (const name of subs) doSub(name, 'enable')
-}
+/** @typedef {{ enable: () => void, disable: () => void, name: string }} Sub */
 
-function disable() {
-    log(`${Me.metadata.uuid}:disable`)
-    for (const name of subs) doSub(name, 'disable')
+/**
+ * @param {any}
+ * @param {'enable' | 'disable'} action 
+ */
+const doSub = (sub, action) => {
+    console.log(`${uuid}:doSub:${sub.name}:${action}`)
+    try {
+        sub[action]()
+    } catch (e) {
+        console.log(`${uuid}:doSub:${sub.name}:${action}:error ${e}`)
+    }
 }
