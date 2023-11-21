@@ -22,8 +22,7 @@ install_yay () {
 
 install_goodies () {
     yay -S --needed \
-        mimi \
-        podman docker docker-buildx docker-compose podman-compose \
+        docker docker-buildx docker-compose \
         zsh rate-mirrors \
         parallel neofetch bind tig nvm jq acpi htop inotify-tools \
         rustup lldb tfenv \
@@ -34,7 +33,7 @@ install_goodies () {
         brave-bin \
         openvpn networkmanager-openvpn \
         mpc-qt vlc qbittorrent subtitleeditor \
-        caddy kooha nnn nmap 
+        caddy nnn nmap
 }
 
 setup_zsh () {
@@ -47,7 +46,8 @@ setup_zsh () {
 }
 
 install_gnome () {
-    yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) gnome-terminal gnome-tweaks dconf-editor gnome-browser-connector
+    yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) xdg-desktop-portal-gtk gnome-terminal gnome-tweaks dconf-editor gnome-browser-connector
+    yay -Rnscu xdg-desktop-portal-gnome 
 }
 
 setup_gnome () {
@@ -60,7 +60,8 @@ setup_gnome () {
         libxml2 \
         pkgconf \
         sassc \
-        parallel
+        parallel \
+        meson gobject-introspection vala \
     git clone https://github.com/qwelias/gnome-patch /tmp/gnome-patch
     cd /tmp/gnome-patch
     ./patch.sh
