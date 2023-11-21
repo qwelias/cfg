@@ -34,6 +34,7 @@ install_goodies () {
         openvpn networkmanager-openvpn \
         mpc-qt vlc qbittorrent subtitleeditor \
         caddy nnn nmap
+	sudo ln -s /usr/bin/codium /usr/bin/code
 }
 
 setup_zsh () {
