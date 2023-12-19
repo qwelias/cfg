@@ -67,7 +67,7 @@ setup_gnome () {
     cd /tmp/gnome-patch
     ./patch.sh
 
-    curl -L https://github.com/MartinPL/Tray-Icons-Reloaded/releases/download/24/trayIconsReloaded@selfmade.pl.zip > tray.zip
+    curl -L https://extensions.gnome.org/extension-data/trayIconsReloadedselfmade.pl.v29.shell-extension.zip > tray.zip
     gnome-extensions install tray.zip
     gsettings set org.gnome.shell disable-user-extensions true
     gsettings set org.gnome.shell disable-user-extensions false
