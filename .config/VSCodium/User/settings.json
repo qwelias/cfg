@@ -2,13 +2,17 @@
     "workbench.colorTheme": "Monokai Classic",
     "workbench.iconTheme": null,
     "debug.javascript.codelens.npmScripts": "never",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
     "editor.lightbulb.enabled": false,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
     "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 20,
     "editor.minimap.renderCharacters": false,
-    "workbench.activityBar.visible": false,
     "workbench.tree.indent": 20,
     "workbench.tree.renderIndentGuides": "always",
     "breadcrumbs.icons": false,
@@ -82,5 +86,7 @@
     },
     "window.zoomLevel": 1,
     "security.workspace.trust.untrustedFiles": "open",
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.activityBar.location": "hidden"
 }
