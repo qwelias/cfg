@@ -27,7 +27,7 @@ install_goodies () {
         parallel neofetch bind tig nvm jq acpi htop inotify-tools \
         rustup lldb tfenv \
         xss-lock xsecurelock devilspie2 \
-        xclip micro vscodium-bin \
+        xclip micro vscodium-bin blackbox-terminal \
         ttf-ubuntu-font-family ttf-dejavu numix-square-icon-theme \
         seahorse \
         brave-bin \
@@ -62,7 +62,8 @@ setup_gnome () {
         pkgconf \
         sassc \
         parallel \
-        meson gobject-introspection vala \
+        meson gobject-introspection vala
+
     git clone https://github.com/qwelias/gnome-patch /tmp/gnome-patch
     cd /tmp/gnome-patch
     ./patch.sh

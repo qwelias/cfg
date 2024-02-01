@@ -88,5 +88,13 @@
     "security.workspace.trust.untrustedFiles": "open",
     "extensions.ignoreRecommendations": true,
     "git.openRepositoryInParentFolders": "never",
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "scm.showIncomingChanges": "never",
+    "scm.showOutgoingChanges": "never",
+    "zig.path": "",
+    "zig.zls.path": "",
+    "zig.initialSetupDone": true,
+    "zig.zls.enableInlayHints": false,
+    "zig.checkForUpdate": false,
+    "zig.revealOutputChannelOnFormattingError": false
 }
