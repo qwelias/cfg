@@ -77,6 +77,8 @@ export SYSTEMD_EDITOR='micro'
 setopt globdots
 setopt complete_aliases
 
+alias tab='sed "s/^/  /"'
+
 alias cfg='git --git-dir=$HOME/cfg/ --work-tree=$HOME'
 compdef cfg='git'
 
