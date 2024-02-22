@@ -23,6 +23,7 @@ highly recommend having a look at [script](./script) dir
 
 ## fonts
 https://gist.github.com/YoEight/d19112db56cd8f93835bf2d009d617f7
+https://venam.net/blog/unix/2020/09/14/playing_with_fonts.html
 
 ## LUKS
 - if you encrypt root partition with LUKS you may want to replace usage of `xss-lock` and `xsecurelock` with `go-luks-suspend-git`
