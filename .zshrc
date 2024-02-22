@@ -53,9 +53,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-syntax-highlighting docker docker-compose)
 
-
 # User configuration
 
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
