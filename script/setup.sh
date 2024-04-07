@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
-
 set -o errexit
+set -o errtrace
 set -o pipefail
 set -o nounset
+shopt -s globstar
+shopt -s nullglob
 set -o xtrace
 
 install_base () {
-    sudo pacman -S git base-devel pacman-contrib man
+    sudo pacman -S git devtools base-devel pacman-contrib man
 }
     
 install_yay () {
@@ -26,15 +28,10 @@ install_goodies () {
         zsh rate-mirrors \
         parallel neofetch bind tig nvm jq acpi htop inotify-tools \
         rustup lldb tfenv \
-        xss-lock xsecurelock devilspie2 \
-        xclip micro vscodium-bin blackbox-terminal \
-        ttf-ubuntu-font-family ttf-dejavu numix-square-icon-theme \
-        seahorse \
-        brave-bin \
+        micro tldr \
+        ttf-ubuntu-font-family ttf-dejavu \
         openvpn networkmanager-openvpn \
-        mpc-qt vlc qbittorrent subtitleeditor \
-        caddy nnn nmap
-	sudo ln -s /usr/bin/codium /usr/bin/code
+        nnn nmap
 }
 
 setup_zsh () {
@@ -44,6 +41,15 @@ setup_zsh () {
     sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
     sudo cp ~/.config/qwelias.zsh-theme /usr/share/oh-my-zsh/themes/qwelias.zsh-theme
     sudo cp ~/.zshrc /root/.zshrc
+}
+
+install_ui_things () {
+    yay -S --needed xclip vscodium-bin \
+    	blackbox-terminal numix-square-icon-theme \
+    	devilspie2 xss-lock xsecurelock \
+    	seahorse brave-bin \
+    	mpc-qt vlc qbittorrent subtitleeditor
+	sudo ln -s /usr/bin/codium /usr/bin/code
 }
 
 install_gnome () {
@@ -80,13 +86,22 @@ setup_keyring () {
     echo '\e[35mAfter logging in next time set Login keyring as default manually using Seahorse'    
 }
 
-fns=('install_base' 'install_yay' 'install_goodies' 'setup_zsh' 'install_gnome' 'setup_gnome' 'setup_keyring')
+desktop () {
+	install_base
+	install_yay
+	install_goodies
+	setup_zsh
+	install_gnome
+	install_ui_things
+	setup_gnome
+	setup_keyring
+}
 
-if [ $# -eq 0 ]
-then args=("${fns[@]}")
-else args=("$@")
-fi
+server () {
+	install_base
+	install_yay
+	install_goodies
+	setup_zsh
+}
 
-for fn in "${args[@]}"
-do $fn
-done
+"${1:?missing first arg}"
