@@ -24,3 +24,4 @@
 	editor = micro
 [pull]
 	ff = only
+	rebase = true

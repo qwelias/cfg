@@ -7,7 +7,7 @@
     "editor.gotoLocation.multipleDeclarations": "goto",
     "editor.gotoLocation.multipleImplementations": "goto",
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
-    "editor.lightbulb.enabled": false,
+    "editor.lightbulb.enabled": "off",
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
     "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -51,6 +51,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "javascript.suggest.autoImports": false,
     "typescript.suggest.autoImports": false,
+    "typescript.disableAutomaticTypeAcquisition": true,
     "typescript.tsdk": "./node_modules/typescript/lib",
     "files.associations": {
         "*.env": "ini",
@@ -65,8 +66,8 @@
     },
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
-    "javascript.format.semicolons":"remove",
-    "typescript.format.semicolons":"remove",
+    "javascript.format.semicolons": "remove",
+    "typescript.format.semicolons": "remove",
     "editor.bracketPairColorization.enabled": false,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"

@@ -15,7 +15,7 @@ export const enable = () => {
 
     // only move the clock if it's in the centre box
     if (children.indexOf(dateMenu.container) != -1) {
-        centerBox.remove_actor(dateMenu.container)
+        centerBox.remove_child(dateMenu.container)
 
         children = rightBox.get_children()
         rightBox.insert_child_at_index(dateMenu.container, children.length - 1)
@@ -35,7 +35,7 @@ export const disable = () => {
 
     // only move the clock back if it's in the right box
     if (children.indexOf(dateMenu.container) != -1) {
-        rightBox.remove_actor(dateMenu.container)
-        centerBox.add_actor(dateMenu.container)
+        rightBox.remove_child(dateMenu.container)
+        centerBox.add_child(dateMenu.container)
     }
 }

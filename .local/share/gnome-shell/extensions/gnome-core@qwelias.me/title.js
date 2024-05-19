@@ -20,7 +20,7 @@ export const enable = () => {
 export const disable = () => {
     global.display.disconnect(focusWindowNotifyConnection)
     disconnect_window()
-    Main.panel._leftBox.remove_actor(focusedWindowIndicator)
+    Main.panel._leftBox.remove_child(focusedWindowIndicator)
 }
 
 const init = () => {
