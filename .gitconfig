@@ -5,15 +5,12 @@
 	default = current
 	followTags = false
 [alias]
+	rebase-keep-dates = rebase --committer-date-is-author-date
 	add-reset-hard = !git add . && git reset --hard
-	diff-clean = diff --ignore-all-space
-	show-clean = show --ignore-all-space
 	push-up = push -u
 	pull-origin = !git pull origin $(git rev-parse --abbrev-ref HEAD)
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	lt = log --graph --oneline --decorate --all
-	stash-staged = !bash -c \"git stash -- $(git diff --staged --name-only)\"
+	stash-staged = !git stash -- $(git diff --staged --name-only)
+	stash-all = !git add . && git stash
 
 [branch]
 	autoSetupMerge = false
@@ -22,6 +19,7 @@
 	conflictStyle = diff3
 [core]
 	editor = micro
+
 [pull]
 	ff = only
 	rebase = true

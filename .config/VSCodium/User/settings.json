@@ -1,101 +1,115 @@
 {
-    "workbench.colorTheme": "Monokai Classic",
-    "workbench.iconTheme": null,
-    "debug.javascript.codelens.npmScripts": "never",
-    "editor.gotoLocation.multipleDefinitions": "goto",
-    "editor.gotoLocation.multipleReferences": "goto",
-    "editor.gotoLocation.multipleDeclarations": "goto",
-    "editor.gotoLocation.multipleImplementations": "goto",
-    "editor.gotoLocation.multipleTypeDefinitions": "goto",
-    "editor.lightbulb.enabled": "off",
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "all",
-    "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 20,
-    "editor.minimap.renderCharacters": false,
-    "workbench.tree.indent": 20,
-    "workbench.tree.renderIndentGuides": "always",
-    "breadcrumbs.icons": false,
-    "workbench.editor.showIcons": false,
-    "window.menuBarVisibility": "toggle",
-    "outline.icons": false,
-    "telemetry.telemetryLevel": "off",
-    "files.exclude": {
-        "**/.git": false,
-        "**/.svn": false,
-        "**/.hg": false,
-        "**/CVS": false,
-        "**/.DS_Store": false
-    },
-    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
-    "search.useIgnoreFiles": false,
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/*.code-search": true,
-        "**/tests-coverage": true
-    },
-    "explorer.confirmDragAndDrop": false,
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "debug.allowBreakpointsEverywhere": true,
-    "typescript.updateImportsOnFileMove.enabled": "never",
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": ".tf",
-                "cmd": "terraform fmt ${file}"
-            }
-        ]
-    },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "javascript.suggest.autoImports": false,
-    "typescript.suggest.autoImports": false,
-    "typescript.disableAutomaticTypeAcquisition": true,
-    "typescript.tsdk": "./node_modules/typescript/lib",
-    "files.associations": {
-        "*.env": "ini",
-        "env_vars": "ini",
-        "*.nomad": "hcl"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[caddyfile]": {
-        "editor.defaultFormatter": "matthewpi.caddyfile-support"
-    },
-    "javascript.preferences.quoteStyle": "single",
-    "typescript.preferences.quoteStyle": "single",
-    "javascript.format.semicolons": "remove",
-    "typescript.format.semicolons": "remove",
-    "editor.bracketPairColorization.enabled": false,
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "terraform.experimentalFeatures.prefillRequiredFields": true,
-    "terraform.experimentalFeatures.validateOnSave": true,
-    "[hcl]": {
-        "editor.defaultFormatter": "fredwangwang.vscode-hcl-format",
-        "editor.formatOnSave": true
-    },
-    "cSpell.enabled": false,
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "window.zoomLevel": 1,
-    "security.workspace.trust.untrustedFiles": "open",
-    "extensions.ignoreRecommendations": true,
-    "git.openRepositoryInParentFolders": "never",
-    "workbench.activityBar.location": "hidden",
-    "scm.showIncomingChanges": "never",
-    "scm.showOutgoingChanges": "never",
-    "zig.path": "",
-    "zig.zls.path": "",
-    "zig.initialSetupDone": true,
-    "zig.zls.enableInlayHints": false,
-    "zig.checkForUpdate": false,
-    "zig.revealOutputChannelOnFormattingError": false
+  "workbench.colorTheme": "Monokai Classic",
+  "workbench.iconTheme": null,
+  "debug.javascript.codelens.npmScripts": "never",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  "editor.lightbulb.enabled": "off",
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontSize": 20,
+  "editor.minimap.renderCharacters": false,
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+  "breadcrumbs.icons": false,
+  "workbench.editor.showIcons": false,
+  "window.menuBarVisibility": "toggle",
+  "outline.icons": false,
+  "telemetry.telemetryLevel": "off",
+  "files.exclude": {
+    "**/gogo-web": true,
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false
+  },
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/gogo-web": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/tests-coverage": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "debug.allowBreakpointsEverywhere": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "javascript.suggest.autoImports": false,
+  "typescript.suggest.autoImports": false,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "files.associations": {
+    "*.env": "ini",
+    "env_vars": "ini",
+    "*.nomad": "hcl"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[caddyfile]": {
+    "editor.defaultFormatter": "matthewpi.caddyfile-support"
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
+  "editor.bracketPairColorization.enabled": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "terraform.experimentalFeatures.prefillRequiredFields": true,
+  "terraform.experimentalFeatures.validateOnSave": true,
+  "[hcl]": {
+    "editor.defaultFormatter": "fredwangwang.vscode-hcl-format",
+    "editor.formatOnSave": true
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "security.workspace.trust.untrustedFiles": "open",
+  "extensions.ignoreRecommendations": true,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.activityBar.location": "hidden",
+  "zig.path": "",
+  "zig.zls.path": "",
+  "zig.initialSetupDone": true,
+  "zig.checkForUpdate": false,
+  "search.quickOpen.history.filterSortOrder": "recency",
+  "scm.defaultViewMode": "tree",
+  "scm.showActionButton": false,
+  "cmake.showOptionsMovedNotification": false,
+  "typescript.tsserver.maxTsServerMemory": 5120,
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.renameMatchingJsxTags": false,
+  "typescript.suggestionActions.enabled": false,
+  "typescript.surveys.enabled": false,
+  "typescript.tsserver.enableRegionDiagnostics": false,
+  "typescript.tsserver.useSyntaxServer": "never",
+  "typescript.tsserver.web.typeAcquisition.enabled": false,
+  "typescript.autoClosingTags": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.suggest.classMemberSnippets.enabled": false,
+  "typescript.suggest.jsdoc.generateReturns": false,
+  "typescript.tsc.autoDetect": "off",
+  "typescript.tsserver.enableTracing": true,
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.web.projectWideIntellisense.enabled": false,
+  "typescript.workspaceSymbols.scope": "currentProject",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[markdown]": {
+  }
 }

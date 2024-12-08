@@ -1,7 +1,7 @@
 xset s 300 5
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
 
-devilspie2 &
+devilspie2 >/dev/null &
 
 (
 	sleep 5
