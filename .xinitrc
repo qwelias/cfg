@@ -5,7 +5,7 @@ devilspie2 >/dev/null &
 
 (
 	sleep 5
-	ps aux | grep -v grep | grep terminal || pkill -9 gnome-session
+	ps aux | grep -v grep | grep ghostty || pkill -9 gnome-session
 ) &
 
 exec gnome-session
