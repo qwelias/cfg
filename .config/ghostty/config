@@ -2,8 +2,11 @@ keybind = ctrl+shift+d=ignore
 keybind = ctrl+shift+left=unbind
 keybind = ctrl+shift+right=unbind
 
+font-family = ""
 font-family = "Ubuntu Mono"
+font-synthetic-style = false
 font-size = 15
+freetype-load-flags = false
 window-inherit-font-size = false
 window-decoration = false
 
