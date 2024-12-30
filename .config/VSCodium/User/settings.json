@@ -111,5 +111,10 @@
     "editor.defaultFormatter": "Vue.volar"
   },
   "[markdown]": {
-  }
+  },
+  "clangd.onConfigChanged": "restart",
+  "editor.inlayHints.enabled": "off",
+  "clangd.arguments": [
+    "--function-arg-placeholders=0"
+  ]
 }

@@ -28,7 +28,7 @@ install_goodies () {
         zsh rate-mirrors \
         parallel neofetch bind tig nvm jq acpi htop inotify-tools \
         rustup lldb tfenv \
-        ghostty-git micro tldr \
+        ghostty micro tldr \
         ttf-ubuntu-font-family ttf-dejavu \
         openvpn networkmanager-openvpn \
         nnn nmap
