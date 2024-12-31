@@ -35,12 +35,11 @@ install_goodies () {
 }
 
 setup_zsh () {
-    yay -S --needed oh-my-zsh-git zsh-syntax-highlighting
+    yay -S --needed zsh-syntax-highlighting
     chsh -s $(which zsh)
     sudo chsh -s $(which zsh)
-    sudo ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins/zsh-syntax-highlighting
-    sudo cp ~/.config/qwelias.zsh-theme /usr/share/oh-my-zsh/themes/qwelias.zsh-theme
     sudo cp ~/.zshrc /root/.zshrc
+    sudo cp ~/.config/zsh-prompt.sh /root/.config
 }
 
 install_ui_things () {
