@@ -23,6 +23,13 @@ setopt hist_find_no_dups
 setopt globdots
 setopt complete_aliases
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[1;5D"   backward-word
+bindkey  "^[[1;5C"   forward-word
+bindkey  "^[[A"   history-search-backward
+bindkey  "^[[B"   history-search-forward
+
 export EDITOR='micro'
 export GIT_EDITOR='micro'
 export SYSTEMD_EDITOR='micro'
