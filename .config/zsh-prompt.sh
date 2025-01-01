@@ -109,7 +109,7 @@ exit_info () {
 }
 
 node_version () {
-	local _vv=$(node --version) || return
+	local _vv=$(node --version 2> /dev/null) || return
 	echo "$(ffcb green ⬡) $_vv"
 }
 
