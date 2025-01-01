@@ -2,6 +2,7 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*:ssh:*' hosts off
+zstyle ':completion:*' menu select
 
 setopt PROMPT_SUBST
 source "$HOME/.config/zsh-prompt.sh"
@@ -27,8 +28,13 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[1;5D"   backward-word
 bindkey  "^[[1;5C"   forward-word
-bindkey  "^[[A"   history-search-backward
-bindkey  "^[[B"   history-search-forward
+bindkey  "^[[A"   history-beginning-search-backward
+bindkey  "^[[B"   history-beginning-search-forward
+
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>/ '$'\n'
+autoload -Uz select-word-style
+select-word-style normal
+zstyle ':zle:*' word-style unspecified
 
 export EDITOR='micro'
 export GIT_EDITOR='micro'
