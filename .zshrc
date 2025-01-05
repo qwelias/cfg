@@ -1,3 +1,5 @@
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
