@@ -1,4 +1,5 @@
 {
+  "gitblame.infoMessageFormat":"${commit.hash_short}: ${commit.summary}",
   "workbench.colorTheme": "Monokai Classic",
   "workbench.iconTheme": null,
   "debug.javascript.codelens.npmScripts": "never",
@@ -17,7 +18,6 @@
   "workbench.tree.renderIndentGuides": "always",
   "breadcrumbs.icons": false,
   "workbench.editor.showIcons": false,
-  "window.menuBarVisibility": "toggle",
   "outline.icons": false,
   "telemetry.telemetryLevel": "off",
   "files.exclude": {
@@ -41,6 +41,7 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "debug.allowBreakpointsEverywhere": true,
   "typescript.updateImportsOnFileMove.enabled": "never",
+  "typescript.referencesCodeLens.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.startupEditor": "newUntitledFile",
   "javascript.suggest.autoImports": false,
@@ -90,7 +91,7 @@
   "scm.defaultViewMode": "tree",
   "scm.showActionButton": false,
   "cmake.showOptionsMovedNotification": false,
-  "typescript.tsserver.maxTsServerMemory": 5120,
+  "typescript.tsserver.maxTsServerMemory": 6144,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.renameMatchingJsxTags": false,
   "typescript.suggestionActions.enabled": false,
@@ -116,5 +117,8 @@
   "editor.inlayHints.enabled": "off",
   "clangd.arguments": [
     "--function-arg-placeholders=0"
-  ]
+  ],
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+  "window.customTitleBarVisibility": "never"
 }
