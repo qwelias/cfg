@@ -34,7 +34,7 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-WORDCHARS='*?_-.[]~=&;:!#$%^(){}<>/ '$'\n'
+WORDCHARS='*?_-.[]~=&;:!#$%^(){}<>/ $\n'
 autoload -Uz select-word-style
 select-word-style normal
 zstyle ':zle:*' word-style unspecified
