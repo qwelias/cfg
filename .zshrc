@@ -10,6 +10,7 @@ setopt PROMPT_SUBST
 source "$HOME/.config/zsh-prompt.sh"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zle_highlight+=(paste:none)
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
