@@ -31,13 +31,12 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+bindkey  "^[[A"   history-beginning-search-backward
+bindkey  "^[OA"   history-beginning-search-backward
+bindkey  "^[[B"   history-beginning-search-forward
+bindkey  "^[OB"   history-beginning-search-forward
 
-WORDCHARS='*?_-.[]~=&;:!#$%^(){}<>/ $\n'
-autoload -Uz select-word-style
-select-word-style normal
-zstyle ':zle:*' word-style unspecified
+WORDCHARS=${WORDCHARS//[\/.-]/}
 
 export EDITOR='micro'
 export GIT_EDITOR='micro'
