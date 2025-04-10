@@ -7,10 +7,10 @@
 [alias]
 	rebase-keep-dates = rebase --committer-date-is-author-date
 	add-reset-hard = !git add . && git reset --hard
+	add-stash = !git add . && git stash
 	push-up = push -u
 	pull-origin = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	stash-staged = !git stash -- $(git diff --staged --name-only)
-	stash-all = !git add . && git stash
 
 [branch]
 	autoSetupMerge = false
