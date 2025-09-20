@@ -55,6 +55,42 @@ compdef tigc='tig'
 alias ctrlc='xclip -selection clipboard -i'
 alias ctrlv='xclip -selection clipboard -o'
 
+alias sx='nsxiv -ao'
+
+export NNN_OPTS='AdeEHi'
+export NNN_FCOLORS='0000d64d0000000000000000'
+export NNN_FIFO='/tmp/nnn.fifo'
+nn ()
+{
+    # Block nesting of nnn in subshells
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
+        return
+    }
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "export" and make sure not to
+    # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
+    #      NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    export NNN_TMPFILE="/tmp/nnn.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    # The command builtin allows one to alias nnn to n, if desired, without
+    # making an infinitely recursive alias
+    command nnn "$@"
+
+    [ ! -f "$NNN_TMPFILE" ] || {
+        . "$NNN_TMPFILE"
+        rm -f -- "$NNN_TMPFILE" > /dev/null
+    }
+}
+
 # if [ -e /etc/profile.d/vte.sh ]; then
 #     . /etc/profile.d/vte.sh
 # fi
