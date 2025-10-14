@@ -1,1 +1,0 @@
-undecorate_window();

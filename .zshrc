@@ -1,4 +1,5 @@
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+export EDITOR=micro
 
 autoload -Uz compinit
 compinit
@@ -57,7 +58,7 @@ alias ctrlv='xclip -selection clipboard -o'
 
 alias sx='nsxiv -ao'
 
-export NNN_OPTS='AdeEHi'
+export NNN_OPTS='JAdeEHi'
 export NNN_FCOLORS='0000d64d0000000000000000'
 export NNN_FIFO='/tmp/nnn.fifo'
 nn ()
@@ -107,4 +108,4 @@ source /usr/share/nvm/init-nvm.sh
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/script:$HOME/.cargo/bin:$PATH"

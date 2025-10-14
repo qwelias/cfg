@@ -26,8 +26,8 @@ install_goodies () {
     yay -S --needed \
         docker docker-buildx docker-compose \
         zsh rate-mirrors \
-        parallel neofetch bind tig nvm jq acpi htop inotify-tools \
-        rustup lldb tfenv \
+        parallel fastfetch bind tig nvm jq acpi htop inotify-tools \
+        rustup lldb \
         ghostty micro tldr \
         ttf-ubuntu-font-family ttf-dejavu \
         openvpn networkmanager-openvpn \
@@ -44,16 +44,13 @@ setup_zsh () {
 
 install_ui_things () {
     yay -S --needed xclip vscodium-bin \
-    	blackbox-terminal numix-square-icon-theme \
-    	devilspie2 xss-lock xsecurelock \
     	seahorse brave-bin \
-    	mpc-qt vlc qbittorrent subtitleeditor
+    	mpv vlc qbittorrent subtitleeditor
 	sudo ln -s /usr/bin/codium /usr/bin/code
 }
 
 install_gnome () {
-    yay -S --needed $(yay -Sgq gnome | grep -vf script/gnome-exclude) xdg-desktop-portal-gtk gnome-terminal gnome-tweaks dconf-editor gnome-browser-connector
-    yay -Rnscu xdg-desktop-portal-gnome 
+    yay -S --needed gnome gnome-browser-connector
 }
 
 setup_gnome () {
@@ -77,6 +74,16 @@ setup_gnome () {
     gnome-extensions install tray.zip
     gsettings set org.gnome.shell disable-user-extensions true
     gsettings set org.gnome.shell disable-user-extensions false
+    gsettings set org.gnome.desktop.interface enable-animations false
+    gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    gsettings set org.gnome.desktop.interface enable-hot-corners false
+    gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+    gsettings set org.gnome.desktop.interface document-font-name 'Ubuntu 13'
+    gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
+    gsettings set org.gnome.desktop.interface font-hinting 'slight'
+    gsettings set org.gnome.desktop.interface font-name 'Ubuntu Light 13'
+    gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
 }
 
 setup_keyring () {
