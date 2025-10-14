@@ -5,6 +5,7 @@
 	default = current
 	followTags = false
 [alias]
+	tag-push = "!f(){ git tag $1 && git push origin tag $1; }; f"
 	rebase-keep-dates = rebase --committer-date-is-author-date
 	add-reset-hard = !git add . && git reset --hard
 	add-stash = !git add . && git stash

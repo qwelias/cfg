@@ -41,6 +41,7 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "debug.allowBreakpointsEverywhere": true,
   "typescript.updateImportsOnFileMove.enabled": "never",
+  "typescript.experimental.useTsgo": false,
   "typescript.referencesCodeLens.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.startupEditor": "newUntitledFile",
@@ -69,8 +70,6 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "terraform.experimentalFeatures.prefillRequiredFields": true,
-  "terraform.experimentalFeatures.validateOnSave": true,
   "[hcl]": {
     "editor.defaultFormatter": "fredwangwang.vscode-hcl-format",
     "editor.formatOnSave": true
@@ -85,17 +84,13 @@
   "workbench.activityBar.location": "hidden",
   "zig.path": "",
   "zig.zls.path": "",
-  "zig.initialSetupDone": true,
-  "zig.checkForUpdate": false,
   "search.quickOpen.history.filterSortOrder": "recency",
   "scm.defaultViewMode": "tree",
   "scm.showActionButton": false,
-  "cmake.showOptionsMovedNotification": false,
   "typescript.tsserver.maxTsServerMemory": 6144,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.renameMatchingJsxTags": false,
   "typescript.suggestionActions.enabled": false,
-  "typescript.surveys.enabled": false,
   "typescript.tsserver.enableRegionDiagnostics": false,
   "typescript.tsserver.useSyntaxServer": "never",
   "typescript.tsserver.web.typeAcquisition.enabled": false,
@@ -109,16 +104,24 @@
   "typescript.tsserver.web.projectWideIntellisense.enabled": false,
   "typescript.workspaceSymbols.scope": "currentProject",
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
   },
-  "clangd.onConfigChanged": "restart",
   "editor.inlayHints.enabled": "off",
-  "clangd.arguments": [
-    "--function-arg-placeholders=0"
-  ],
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "native",
-  "window.customTitleBarVisibility": "never"
+  "window.customTitleBarVisibility": "never",
+  "vue.codeActions.askNewComponentName": false,
+  "vue.format.template.initialIndent": false,
+  "cSpell.enabled": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
 }
