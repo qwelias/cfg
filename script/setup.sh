@@ -84,6 +84,9 @@ setup_gnome () {
     gsettings set org.gnome.desktop.interface font-hinting 'slight'
     gsettings set org.gnome.desktop.interface font-name 'Ubuntu Light 13'
     gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 12'
+    gsettings set org.gnome.desktop.input-sources per-window true
+    gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "['<Shift><Alt>Tab']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 }
 
 setup_keyring () {
