@@ -8,6 +8,6 @@ export const enable = () => {
 }
 
 export const disable = () => {
-    Main.setThemeStylesheet('/usr/share/gnome-shell/theme/default.css') // can be whatever
-    Main.loadTheme()
+    // Main.setThemeStylesheet('/usr/share/gnome-shell/theme/default.css') // can be whatever
+    // Main.loadTheme()
 }

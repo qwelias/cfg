@@ -4,17 +4,22 @@ import Clutter from 'gi://Clutter'
 
 export const name = 'title'
 
-let label
+let label = null
 let focusWindowNotifyConnection = null
 let windowTitleNotifyConnection = null
 let focusedWindowIndicator
 let window = null
 
 export const enable = () => {
-    init()
+    focusedWindowIndicator = new St.Bin({ style_class: 'panel-button' })
+    label = new St.Label({ y_align: Clutter.ActorAlign.CENTER })
+    focusedWindowIndicator.set_child(label)
+
     Main.panel._leftBox.insert_child_at_index(focusedWindowIndicator, 3)
 
     focusWindowNotifyConnection = global.display.connect('notify::focus-window', on_focus_window_notify)
+
+    on_focus_window_notify()
 }
 
 export const disable = () => {
@@ -23,17 +28,9 @@ export const disable = () => {
     Main.panel._leftBox.remove_child(focusedWindowIndicator)
 }
 
-const init = () => {
-    focusedWindowIndicator = new St.Bin({ style_class: 'panel-button' })
-    label = new St.Label({ y_align: Clutter.ActorAlign.CENTER })
-    focusedWindowIndicator.set_child(label)
-}
-
 const set_window_indicator = () => {
     if (!window) return
-
-    let windowTitle = window.get_title()
-    label.set_text(windowTitle)
+    label.set_text(window.get_title())
 }
 
 const disconnect_window = () => {
