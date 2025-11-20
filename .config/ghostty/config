@@ -1,3 +1,5 @@
+scrollback-limit = 25000000
+
 keybind = 
 keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
@@ -21,6 +23,7 @@ font-size = 15
 freetype-load-flags = false
 window-inherit-font-size = false
 window-decoration = false
+link-previews=osc8
 
 palette = 0=#75715E
 palette = 1=#F92672
