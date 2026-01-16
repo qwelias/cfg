@@ -12,6 +12,7 @@
 	push-up = push -u
 	pull-origin = !git pull origin $(git rev-parse --abbrev-ref HEAD)
 	stash-staged = !git stash -- $(git diff --staged --name-only)
+	log-nice = log --decorate --pretty=format:'%C(yellow)%h%C(reset) %C(cyan)%ad%C(reset) %C(green)%an%C(reset) %C(auto)%d%C(reset) %C(white)%s%C(reset)' --date=short
 
 [branch]
 	autoSetupMerge = false
