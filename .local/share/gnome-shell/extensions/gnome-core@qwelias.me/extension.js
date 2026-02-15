@@ -5,6 +5,7 @@ import * as hideAccessibility from './hideAccessibility.js'
 import * as theme from './theme.js'
 import * as title from './title.js'
 import * as decorator from './decorator.js'
+import * as mon from './mon.js'
 
 const uuid = 'gnome-core@qwelias.me'
 
@@ -27,6 +28,7 @@ const subs = [
     theme,
     title,
     decorator,
+    mon,
 ]
 
 /** @typedef {{ enable: () => void, disable: () => void, name: string }} Sub */
