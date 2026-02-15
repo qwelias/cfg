@@ -8,15 +8,15 @@ import Clutter from 'gi://Clutter'
 export const name = 'mon'
 
 let timeout = null
-let indicator = null
+let cpumem = null
 
 export const enable = () => {
   disable()
 
   const label = new St.Label({ text: '...', y_align: Clutter.ActorAlign.CENTER })
-  indicator = new Button(0.0, 'qwemon', true)
-  indicator.add_child(label)
-  panel.addToStatusArea('qwemon', indicator)
+  cpumem = new Button(0.0, 'qwemon', true)
+  cpumem.add_child(label)
+  panel.addToStatusArea('qwemon', cpumem)
 
   timeout = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT_IDLE, 2, () => {
     update(label)
@@ -25,10 +25,10 @@ export const enable = () => {
 }
 
 export const disable = () => {
-  if (indicator) {
-    indicator.stop()
-    indicator.destroy()
-    indicator = null
+  if (cpumem) {
+    cpumem.stop()
+    cpumem.destroy()
+    cpumem = null
   }
 
   if (timeout) {
@@ -45,13 +45,13 @@ const update = (label) => {
     const totalDelta = prevCpu.total - cpu.total
     const idleDelta = prevCpu.idle - cpu.idle
 
-    status.push(String(100 * (1 - idleDelta / totalDelta) | 0))
+    status.push(Math.ceil((100 * (1 - idleDelta / totalDelta))))
   } else {
     status.push('')
   }
   prevCpu = cpu
 
-  status.push(readMem() | 0)
+  status.push(Math.ceil(readMem()))
 
   label.set_text(status.join(' | '))
 }
