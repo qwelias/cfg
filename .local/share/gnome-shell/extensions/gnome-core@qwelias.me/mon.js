@@ -59,7 +59,7 @@ const update = (label) => {
 
   status.push(Math.ceil(readMem()))
 
-  label.set_text(status.join(' : '))
+  label.set_text(status.join(' ~ '))
 }
 
 let prevCpu = null
