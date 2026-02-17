@@ -18,6 +18,12 @@ export const enable = () => {
   cpumem.add_child(label)
   panel.addToStatusArea('qwemon', cpumem)
 
+  cpumem.connect('button-press-event', (widget, buttonNumber) => {
+    update(label)
+
+    return Clutter.EVENT_STOP
+  })
+
   timeout = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT_IDLE, 2, () => {
     update(label)
     return true
@@ -53,7 +59,7 @@ const update = (label) => {
 
   status.push(Math.ceil(readMem()))
 
-  label.set_text(status.join(' | '))
+  label.set_text(status.join(' : '))
 }
 
 let prevCpu = null
