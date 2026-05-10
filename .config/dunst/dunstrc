@@ -14,10 +14,10 @@
     progress_bar_max_width = 390
     progress_bar_corner_radius = 5
     font = UbuntuMono 15
-    format = "<b>%s</b>\n\n\n%b\n\n\n"
+    format = "<b>%s</b>\n\n%b"
 
 [urgency_low]
-    format = "%s\n\n\n%b\n\n\n"
+    format = "%s\n%b"
     background = "#272822"
 	foreground = "#f8f8f2"
 	frame_color = "#f8f8f2"
