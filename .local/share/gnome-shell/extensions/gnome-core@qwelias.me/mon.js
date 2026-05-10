@@ -13,8 +13,11 @@ let cpumem = null
 export const enable = () => {
   disable()
 
-  const label = new St.Label({ text: '...', y_align: Clutter.ActorAlign.CENTER })
   cpumem = new Button(0.0, 'qwemon', true)
+
+  const label = new St.Label({ text: '...', y_align: Clutter.ActorAlign.CENTER })
+  label.add_style_class_name('qwelabel')
+
   cpumem.add_child(label)
   panel.addToStatusArea('qwemon', cpumem)
 
@@ -57,9 +60,15 @@ const update = (label) => {
   }
   prevCpu = cpu
 
-  status.push(Math.ceil(readMem()))
+  const mem = Math.ceil(readMem())
+  status.push(mem)
+  if (mem > 90) {
+    cpumem.add_style_class_name('qwarning')
+  } else {
+    cpumem.remove_style_class_name('qwarning')
+  }
 
-  label.set_text(status.join(' ~ '))
+  label.set_text(status.map(t => String(t).padStart(2, '0')).join(' ~ '))
 }
 
 let prevCpu = null

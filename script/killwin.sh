@@ -1,0 +1,1 @@
+kill -9 $(ps aux | grep 'C:\\' | tail -n2 | head -n1 | awk '{print $2}')

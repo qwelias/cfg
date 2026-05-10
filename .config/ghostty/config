@@ -1,5 +1,7 @@
 scrollback-limit = 25000000
 
+mouse-scroll-multiplier=precision:5,discrete:3
+
 keybind = 
 keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
