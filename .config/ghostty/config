@@ -20,6 +20,7 @@ keybind = ctrl+shift+d=ignore
 keybind = ctrl+shift+left=unbind
 keybind = ctrl+shift+right=unbind
 
+window-title-font-family = "Ubuntu Mono"
 font-family = "Ubuntu Mono"
 font-size = 15
 freetype-load-flags = false

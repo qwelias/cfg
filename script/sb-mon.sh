@@ -23,7 +23,6 @@ c11=$(awk '{print $11}' /tmp/cpustat)
 ct=$(( $c2+$c3+$c4+$c5+$c6+$c7+$c8+$c9+$c10+$c11 ))
 ci=$(( $c6 + $c5 ))
 
-printf '  '
 if [ -f '/tmp/cpuprev' ]; then
     cpt=$(awk '{print $1}' /tmp/cpuprev)
     cpi=$(awk '{print $2}' /tmp/cpuprev)
@@ -31,19 +30,25 @@ if [ -f '/tmp/cpuprev' ]; then
     cdt=$(( $cpt - $ct ))
     cdi=$(( $cpi - $ci ))
 
-    pp=$(echo "scale=2; 100 * (1 - $cdi / $cdt)" | bc | awk -F'.' '{print $1}')
-    printf "%02d" "$pp"
+    cpup=$(echo "scale=2; 100 * (1 - $cdi / $cdt)" | bc | awk -F'.' '{print $1}')
 else
-    printf '..'
+    cpup='..'
 fi
-
 echo "$ct $ci" > /tmp/cpuprev
-
-printf ' ~ '
 
 cat /proc/meminfo > /tmp/meminfo
 mt=$(grep MemTotal /tmp/meminfo | awk '{print $2}')
 ma=$(grep MemAvail /tmp/meminfo | awk '{print $2}')
 mu=$(( $mt - $ma ))
-printf "%02d" $(echo $(( 100 * $mu / $mt )))
+memp=$(echo $(( 100 * $mu / $mt )))
+
+if [[ $memp -gt 90 ]]
+then printf '\x09'
+elif [[ $memp -gt 85 ]]
+then printf '\x02'
+fi
+printf '  ' 
+printf "%02d" $cpup
+printf ' ~ '
+printf "%02d" $memp
 printf '  '
