@@ -8,11 +8,10 @@ shopt -s nullglob
 # set -o xtrace
 
 case "$BLOCK_BUTTON" in
-	1) 
-		if ! pkill wiremix
-		then ghostty +new-window --command=wiremix --title=Audio
-		fi
-	;;
+	1) ~/script/kb-volume.sh x ;;
+	3) ~/script/kb-volume.sh m ;;
+	4) ~/script/kb-volume.sh + ;;
+	5) ~/script/kb-volume.sh - ;;
 esac
 
 sink=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
