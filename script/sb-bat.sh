@@ -7,25 +7,27 @@ shopt -s globstar
 shopt -s nullglob
 # set -o xtrace
 
-setnotify() {
+setpower() {
 	powerprofilesctl set $1 && notify-send -h STRING:x-dunst-stack-tag:power -u low "󱐋 $1"
 }
 
 case "$BLOCK_BUTTON" in
-	1) setnotify balanced ;;
-	2) setnotify performance ;;
-	3) setnotify power-saver ;;
+	1) setpower balanced ;;
+	2) setpower performance ;;
+	3) setpower power-saver ;;
 esac
 
 cap=$(cat /sys/class/power_supply/BAT0/capacity)
 if grep 'Charg' /sys/class/power_supply/BAT0/status > /dev/null
 then printf '\x06'
-elif grep 'Disch' /sys/class/power_supply/BAT0/status > /dev/null
-then printf '\x08'
+elif [[ $cap -le 10 ]]
+then printf '\x09' && notify-send -t 2000 -u critical "󱃍 $cap% charge left !!!"
 elif [[ $cap -lt 20 ]]
 then printf '\x09'
 elif [[ $cap -lt 30 ]]
 then printf '\x02'
+elif grep 'Disch' /sys/class/power_supply/BAT0/status > /dev/null
+then printf '\x08'
 fi
 
 prof=$(powerprofilesctl | grep '*' | awk '{print $2}' | tr -d ':')
