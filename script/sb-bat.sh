@@ -20,17 +20,17 @@ esac
 cap=$(cat /sys/class/power_supply/BAT0/capacity)
 if grep 'Charg' /sys/class/power_supply/BAT0/status > /dev/null
 then printf '\x06'
-elif [[ $cap -le 10 ]]
+elif [ $cap -le 10 ]
 then printf '\x09' && notify-send -t 2000 -u critical "󱃍 $cap% charge left !!!"
-elif [[ $cap -lt 20 ]]
+elif [ $cap -lt 20 ]
 then printf '\x09'
-elif [[ $cap -lt 30 ]]
+elif [ $cap -lt 30 ]
 then printf '\x02'
 elif grep 'Disch' /sys/class/power_supply/BAT0/status > /dev/null
 then printf '\x08'
 fi
 
-prof=$(powerprofilesctl | grep '*' | awk '{print $2}' | tr -d ':')
+prof=$(cat /sys/devices/system/cpu/cpu0/cpufreq/energy_performance_preference)
 profs='.'
 if [[ $prof = b* ]]
 then profs='·'
