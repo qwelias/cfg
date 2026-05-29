@@ -8,8 +8,8 @@ shopt -s nullglob
 # set -o xtrace
 
 case "$BLOCK_BUTTON" in
-	1) ~/script/kb-volume.sh x ;;
-	3) ~/script/kb-volume.sh m ;;
+	1) ~/script/kb-volume.sh m ;;
+	3) ~/script/kb-volume.sh x ;;
 	4) ~/script/kb-volume.sh + ;;
 	5) ~/script/kb-volume.sh - ;;
 esac

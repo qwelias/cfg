@@ -8,13 +8,19 @@ shopt -s nullglob
 # set -o xtrace
 
 setpower() {
-	powerprofilesctl set $1 && notify-send -h STRING:x-dunst-stack-tag:power -u low "󱐋 $1"
+	powerprofilesctl set $1 && notify $1
+}
+
+notify() {
+	notify-send -h STRING:x-dunst-stack-tag:power -u low "󱐋 $1"
 }
 
 case "$BLOCK_BUTTON" in
 	1) setpower balanced ;;
 	2) setpower performance ;;
 	3) setpower power-saver ;;
+	4) notify "max life" ;;
+	5) notify "max charge" ;;
 esac
 
 cap=$(cat /sys/class/power_supply/BAT0/capacity)

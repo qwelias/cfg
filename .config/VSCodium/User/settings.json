@@ -10,7 +10,7 @@
   "editor.lightbulb.enabled": "off",
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
-  "editor.fontFamily": "'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'Ubuntu Mono', 'Noto Sans Mono', 'Symbols Nerd Font', 'Noto Sans Mono CJK SC', 'Noto Color Emoji', 'monospace', monospace",
   "editor.fontSize": 20,
   "editor.minimap.renderCharacters": false,
   "workbench.tree.indent": 20,
@@ -121,4 +121,14 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "extensions.autoUpdate": false,
+  "clangd.arguments": [
+    "--log=verbose",
+    "--pretty",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--compile-commands-dir=${workspaceFolder}",
+    "--enable-config"
+  ]
 }
