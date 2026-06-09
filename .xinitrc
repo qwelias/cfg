@@ -23,7 +23,7 @@ localectl set-x11-keymap gb,ru "" "" grp:alt_space_toggle
 picom &
 nm-applet &
 blueman-applet &
-feh --bg-fill ~/Pictures/1757704747-81cd7b0e05481a03daf5583fb83f3357.jpeg &
+feh --bg-fill ~/Pictures/background.jpeg &
 
 # xset s 300 5
 xss-lock -l -- slock &
