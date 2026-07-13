@@ -19,7 +19,7 @@
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-localectl set-x11-keymap gb,ru "" "" grp:alt_space_toggle
+localectl set-x11-keymap us,ru "" "" grp:alt_space_toggle
 picom &
 nm-applet &
 blueman-applet &

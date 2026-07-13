@@ -28,12 +28,13 @@ getextname() {
 }
 
 cleanname() {
-	echo "$1" | sed 's/[^a-Z0-9]/_/g' 
+	echo "$1" | sed 's/[^a-zA-Z0-9]/_/g' 
 	# echo "${1//[\,\-+! '\"'\`\'\/\(\)’]/_}"
 }
 
 while read -r file
 do
+	# echo $file
 	filename=$(cleanname "${file%.*}")
 	extname="${file##*.}"
 	path="${to}/${filename}.${extname}"
