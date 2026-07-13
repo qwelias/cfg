@@ -25,7 +25,8 @@ nm-applet &
 blueman-applet &
 feh --bg-fill ~/Pictures/background.jpeg &
 
-# xset s 300 5
+xset s 300
+xset dpms 0 0 600
 xss-lock -l -- slock &
 
 dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
