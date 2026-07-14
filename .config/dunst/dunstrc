@@ -22,7 +22,7 @@
 	foreground = "#f8f8f2"
 	frame_color = "#f8f8f2"
 	highlight = "#f8f8f2"
-	timeout = 3
+	timeout = 1
 
 [urgency_normal]
     background = "#272822"
