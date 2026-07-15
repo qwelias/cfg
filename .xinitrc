@@ -19,8 +19,7 @@
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-localectl set-x11-keymap us,ru "" "" grp:alt_space_toggle
-picom &
+xcompmgr -n &
 nm-applet &
 blueman-applet &
 feh --bg-fill ~/Pictures/background.jpeg &
