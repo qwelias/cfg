@@ -25,13 +25,11 @@ install_yay () {
 install_goodies () {
     yay -S --needed \
         docker docker-buildx docker-compose \
-        zsh rate-mirrors \
+        zsh \
         parallel fastfetch bind tig nvm jq acpi htop inotify-tools \
-        rustup lldb \
         ghostty micro tldr \
-        ttf-ubuntu-font-family ttf-dejavu \
         openvpn networkmanager-openvpn \
-        nnn nmap
+        nmap 7zip downgrade iftop
 }
 
 setup_zsh () {
@@ -44,13 +42,12 @@ setup_zsh () {
 
 install_ui_things () {
     yay -S --needed xclip vscodium-bin \
-    	seahorse brave-bin \
-    	mpv vlc qbittorrent subtitleeditor
+    	seahorse brave-origin-bin \
+    	ttf-ubuntu-font-family ttf-nerd-fonts-symbols noto-fonts-emoji noto-fonts noto-fonts-cjk \
+    	mpv vlc qbittorrent thunar ristretto feh wireplumber wiremix gamemode \
+    	xlibre-meta xss-lock xcompmgr xcolor xorg-xdpyinfo xorg-xinput xorg-xev \
+    	network-manager-applet blueman maim gnome-disk-utility
 	sudo ln -s /usr/bin/codium /usr/bin/code
-}
-
-install_gnome () {
-    yay -S --needed gnome gnome-browser-connector
 }
 
 setup_gnome () {
@@ -103,9 +100,7 @@ desktop () {
 	install_yay
 	install_goodies
 	setup_zsh
-	install_gnome
 	install_ui_things
-	setup_gnome
 	setup_keyring
 }
 

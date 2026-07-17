@@ -73,7 +73,7 @@ application/zip=userapp-7z x-FJFBR3.desktop;
 [Default Applications]
 image/bmp=org.gnome.eog.desktop;
 image/gif=org.gnome.Loupe.desktop
-image/jpeg=org.gnome.Loupe.desktop
+image/jpeg=org.xfce.ristretto.desktop
 image/jpg=org.gnome.eog.desktop;
 image/pjpeg=org.gnome.eog.desktop;
 image/png=org.xfce.ristretto.desktop
