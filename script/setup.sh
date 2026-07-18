@@ -45,7 +45,7 @@ install_ui_things () {
     	seahorse brave-origin-bin \
     	ttf-ubuntu-font-family ttf-nerd-fonts-symbols noto-fonts-emoji noto-fonts noto-fonts-cjk \
     	mpv vlc qbittorrent thunar ristretto feh wireplumber wiremix gamemode \
-    	xlibre-meta xss-lock xcompmgr xcolor xorg-xdpyinfo xorg-xinput xorg-xev \
+    	xlibre-meta xss-lock xcolor xorg-xdpyinfo xorg-xinput xorg-xev \
     	network-manager-applet blueman maim gnome-disk-utility glib
 	sudo ln -s /usr/bin/codium /usr/bin/code
 }
