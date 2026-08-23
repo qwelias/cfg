@@ -121,7 +121,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "clangd.arguments": [
     "--log=verbose",
     "--pretty",
@@ -130,5 +130,8 @@
     "--header-insertion=iwyu",
     "--compile-commands-dir=${workspaceFolder}",
     "--enable-config"
-  ]
+  ],
+  "editor.unicodeHighlight.allowedLocales": {
+    "ru": true
+  }
 }
